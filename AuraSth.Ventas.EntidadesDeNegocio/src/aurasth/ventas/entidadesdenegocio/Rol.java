@@ -5,13 +5,14 @@ import java.util.ArrayList;
 
 
 public class Rol {
+    
     private int id;
     private String nombre;
     private int top_aux;
-    private ArrayList<Empleado>empleados;
-    private ArrayList<Usuario>usuarios;
-
-    public Rol() {
+    private ArrayList<Usuario> usuarios;
+    private ArrayList<Empleado> empleados;
+    
+    public Rol(){       
     }
 
     public Rol(int id, String nombre) {
@@ -43,14 +44,6 @@ public class Rol {
         this.top_aux = top_aux;
     }
 
-    public ArrayList<Empleado> getEmpleados() {
-        return empleados;
-    }
-
-    public void setEmpleados(ArrayList<Empleado> empleados) {
-        this.empleados = empleados;
-    }
-
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
@@ -58,6 +51,15 @@ public class Rol {
     public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(ArrayList<Empleado> empleados) {
+        this.empleados = empleados;
+    }
+    
     
     
 }

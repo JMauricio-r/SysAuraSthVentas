@@ -3,30 +3,30 @@ package aurasth.ventas.entidadesdenegocio;
 
 import java.time.LocalDate;
 
+
 public class Usuario {
     
     private int id;
     private int idRol;
-    private String Nombre;
-    private String apellido;
+    private String nombre;
+    private String Apellido;
     private String email;
     private String login;
     private String contrasenia;
     private byte estado;
     private LocalDate fecha;
-    private int top_aux;
-    private String confirmar_password;
-    private Rol roles;
+    private String confirmar_contrasenia;
+    private int top_aux;   
+    private Rol rol;
 
     public Usuario() {
     }
 
-    public Usuario(int id, int idRol, String Nombre, String apellido, String email,
-            String login, String contrasenia, byte estado, LocalDate fecha) {
+    public Usuario(int id, int idRol, String nombre, String Apellido, String email, String login, String contrasenia, byte estado, LocalDate fecha) {
         this.id = id;
         this.idRol = idRol;
-        this.Nombre = Nombre;
-        this.apellido = apellido;
+        this.nombre = nombre;
+        this.Apellido = Apellido;
         this.email = email;
         this.login = login;
         this.contrasenia = contrasenia;
@@ -51,19 +51,19 @@ public class Usuario {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
-        return apellido;
+        return Apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
     }
 
     public String getEmail() {
@@ -106,6 +106,14 @@ public class Usuario {
         this.fecha = fecha;
     }
 
+    public String getConfirmar_contrasenia() {
+        return confirmar_contrasenia;
+    }
+
+    public void setConfirmar_contrasenia(String confirmar_contrasenia) {
+        this.confirmar_contrasenia = confirmar_contrasenia;
+    }
+
     public int getTop_aux() {
         return top_aux;
     }
@@ -114,22 +122,13 @@ public class Usuario {
         this.top_aux = top_aux;
     }
 
-    public String getConfirmar_password() {
-        return confirmar_password;
+    public Rol getRol() {
+        return rol;
     }
 
-    public void setConfirmar_password(String confirmar_password) {
-        this.confirmar_password = confirmar_password;
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
-
-    public Rol getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Rol roles) {
-        this.roles = roles;
-    }
-    
     
     
     
