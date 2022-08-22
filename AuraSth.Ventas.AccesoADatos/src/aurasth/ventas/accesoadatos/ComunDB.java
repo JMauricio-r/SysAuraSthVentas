@@ -1,4 +1,3 @@
-
 package aurasth.ventas.accesoadatos;
 import java.sql.*;
 public class ComunDB {
