@@ -1,10 +1,6 @@
 
 package aurasth.ventas.entidadesdenegocio;
 
-/**
- *
- * @author alexis
- */
 public class Carrito {
 
    private int Id;
