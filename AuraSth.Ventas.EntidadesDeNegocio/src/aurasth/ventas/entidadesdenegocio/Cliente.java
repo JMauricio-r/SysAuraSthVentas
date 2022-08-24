@@ -10,7 +10,7 @@ public class Cliente {
   private String Apellido;
   private String Email;
   private String Login;
-  private int Contrasenia;
+  private String Contrasenia;
   private LocalDate Fecha;
   private String ConfirmarContrasenia; 
   private int top_aux;
@@ -20,7 +20,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int Id, String Nombre, String Apellido, String Email, String Login, int Contrasenia, LocalDate Fecha) {
+    public Cliente(int Id, String Nombre, String Apellido, String Email, String Login, String Contrasenia, LocalDate Fecha) {
         this.Id = Id;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -72,11 +72,11 @@ public class Cliente {
         this.Login = Login;
     }
 
-    public int getContrasenia() {
+    public String getContrasenia() {
         return Contrasenia;
     }
 
-    public void setContrasenia(int Contrasenia) {
+    public void setContrasenia(String Contrasenia) {
         this.Contrasenia = Contrasenia;
     }
 
