@@ -193,7 +193,7 @@ public class UsuarioDAL {
         }
     }
 
-    private static void obtenerDatosIncluirRol(PreparedStatement pPS, ArrayList<Usuario> pUsuarios) throws Exception {
+    private static void ObtenerDatosIncluirRol(PreparedStatement pPS, ArrayList<Usuario> pUsuarios) throws Exception {
         try (ResultSet resultSet = ComunDB.ObtenerResultSet(pPS);) {
             HashMap<Integer, Rol> rolMap = new HashMap(); 
             while (resultSet.next()) { 
@@ -411,7 +411,7 @@ public class UsuarioDAL {
                 utilQuery.setSQL(null);
                 utilQuery.setNumWhere(0);
                 QuerySelect(pUsuario, utilQuery);
-                obtenerDatosIncluirRol(ps, usuarios);
+                ObtenerDatosIncluirRol(ps, usuarios);
                 ps.close(); 
             } catch (SQLException ex) {
                 throw ex;
