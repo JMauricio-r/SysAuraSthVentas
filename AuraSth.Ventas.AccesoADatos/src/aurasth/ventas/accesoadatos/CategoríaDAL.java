@@ -31,7 +31,7 @@ public class CategoríaDAL {
         ArrayList<Categoria> categorias = new ArrayList();
         try (Connection conn = ComunDB.ObtenerConexion();) { 
             String sql = ObtenerSelect(pCategoria);  
-            sql += " WHERE m.Id<>? AND m.Nombre=?";
+            sql += " WHERE c.Id<>? AND c.Nombre=?";
             try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);){
                 ps.setInt(1, pCategoria.getId()); 
                 ps.setString(2, pCategoria.getNombre());  
@@ -155,7 +155,7 @@ public class CategoríaDAL {
         ArrayList<Categoria> categorias = new ArrayList();
         try (Connection conn = ComunDB.ObtenerConexion();) {
             String sql = ObtenerSelect(pCategoria);
-            sql += " WHERE r.Id=?";
+            sql += " WHERE c.Id=?";
             try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn, sql);) { 
                 ps.setInt(1, pCategoria.getId()); 
                 ObtenerDatos(ps, categorias); 
@@ -203,7 +203,7 @@ public class CategoríaDAL {
             }
         }
         if (pCategoria.getNombre() != null && pCategoria.getNombre().trim().isEmpty() == false) {
-            pUtilQuery.AgregarWhereAnd(" r.Nombre LIKE ? "); 
+            pUtilQuery.AgregarWhereAnd(" c.Nombre LIKE ? "); 
             if (statement != null) {
                 statement.setString(pUtilQuery.getNumWhere(), "%" + pCategoria.getNombre() + "%");
             }
