@@ -305,7 +305,7 @@ public class ClienteDAL {
         String contrasenia = EncriptarMD5(pCliente.getContrasenia());
         try (Connection conn = ComunDB.ObtenerConexion();) { 
             String sql = ObtenerSelect(pCliente);
-            sql += " WHERE c.Login=? AND c.Contrasenia=?";
+            sql += " WHERE c.Id=? AND c.Login=?";
             try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn, sql);) { 
                 ps.setString(1, pCliente.getLogin());
                 ps.setString(2, contrasenia);
