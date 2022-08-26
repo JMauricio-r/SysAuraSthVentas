@@ -17,8 +17,8 @@ private LocalDate fecha;
 private int top_aux;
 private ArrayList<DetalleVenta>detalleventas;
 private ArrayList<Carrito>carritos;
-private Categoria categorias;
-private Marca marcas;
+private Categoria categoria;
+private Marca marca;
 
     public Producto() {
     }
@@ -140,20 +140,20 @@ private Marca marcas;
         this.carritos = carritos;
     }
 
-    public Categoria getCategorias() {
-        return categorias;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategorias(Categoria categorias) {
-        this.categorias = categorias;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public Marca getMarcas() {
-        return marcas;
+    public Marca getMarca() {
+        return marca;
     }
 
-    public void setMarcas(Marca marcas) {
-        this.marcas = marcas;
+    public void setMarca(Marca marca) {
+        this.marca = marca;
     }
 
 

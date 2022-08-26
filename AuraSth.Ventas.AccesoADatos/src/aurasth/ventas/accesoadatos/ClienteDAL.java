@@ -269,7 +269,7 @@ public class ClienteDAL {
 //            if (statement != null) {
 //                statement.setDate(pUtilQuery.getNumWhere(), pCliente.getFecha());
 //            }
-//        }
+//       }
     }
  
     public static ArrayList<Cliente> Buscar(Cliente pCliente) throws Exception {

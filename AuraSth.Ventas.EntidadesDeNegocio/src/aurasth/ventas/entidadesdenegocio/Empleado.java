@@ -19,7 +19,8 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(int id, int idRol, String nombre, String Apellido, String contacto, String numeroDocumento, byte estado, LocalDate fecha) {
+    public Empleado(int id, int idRol, String nombre, String Apellido, String contacto,
+            String numeroDocumento, byte estado, LocalDate fecha) {
         this.id = id;
         this.idRol = idRol;
         this.nombre = nombre;
@@ -108,7 +109,5 @@ public class Empleado {
 
     public void setRol(Rol rol) {
         this.rol = rol;
-    }
-    
-    
+    }   
 }
