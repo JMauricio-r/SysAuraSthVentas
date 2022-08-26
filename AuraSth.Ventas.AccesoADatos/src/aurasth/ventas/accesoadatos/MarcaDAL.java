@@ -22,7 +22,7 @@ public class MarcaDAL {
     }
     
     private static String AgregarOrderBy(Marca pMarca) {
-        String sql = " ORDER BY u.Id DESC";
+        String sql = " ORDER BY m.Id DESC";
         return sql;
     }
     
@@ -61,7 +61,7 @@ public class MarcaDAL {
         boolean existe = ExisteMarca(pMarca);
         if (existe == false) {
             try (Connection conn = ComunDB.ObtenerConexion();) { 
-                sql = "INSERT INTO Roles(Nombre) VALUES(?)";
+                sql = "INSERT INTO Marcas(Nombre) VALUES(?)";
                 try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);) {
                     ps.setString(1, pMarca.getNombre());
                     result = ps.executeUpdate(); 
@@ -87,7 +87,7 @@ public class MarcaDAL {
         boolean existe = ExisteMarca(pMarca);
         if (existe == false) {
             try (Connection conn = ComunDB.ObtenerConexion();) { 
-                sql = "UPDATE Roles SET Nombre=? WHERE Id=?";
+                sql = "UPDATE Marcas SET Nombre=? WHERE Id=?";
                 try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn, sql);) { 
                     ps.setString(1, pMarca.getNombre()); 
                     result = ps.executeUpdate(); 
@@ -107,13 +107,13 @@ public class MarcaDAL {
         return result; 
     }
     
-    public static int Eliminar(Rol pRol) throws Exception {
+    public static int Eliminar(Marca pMarca) throws Exception {
         int result;
         String sql;
         try (Connection conn = ComunDB.ObtenerConexion();) { 
-            sql = "DELETE FROM Roles WHERE Id=?"; 
+            sql = "DELETE FROM Marcas WHERE Id=?"; 
             try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);) { 
-                ps.setInt(1, pRol.getId());
+                ps.setInt(1, pMarca.getId());
                 result = ps.executeUpdate(); 
                 ps.close(); 
             } catch (SQLException ex) {
@@ -155,7 +155,7 @@ public class MarcaDAL {
         ArrayList<Marca> marcas = new ArrayList();
         try (Connection conn = ComunDB.ObtenerConexion();) {
             String sql = ObtenerSelect(pMarca);
-            sql += " WHERE r.Id=?";
+            sql += " WHERE m.Id=?";
             try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn, sql);) { 
                 ps.setInt(1, pMarca.getId()); 
                 ObtenerDatos(ps, marcas); 
@@ -203,7 +203,7 @@ public class MarcaDAL {
             }
         }
         if (pMarca.getNombre() != null && pMarca.getNombre().trim().isEmpty() == false) {
-            pUtilQuery.AgregarWhereAnd(" r.Nombre LIKE ? "); 
+            pUtilQuery.AgregarWhereAnd(" m.Nombre LIKE ? "); 
             if (statement != null) {
                 statement.setString(pUtilQuery.getNumWhere(), "%" + pMarca.getNombre() + "%");
             }

@@ -28,41 +28,7 @@ public class VentaDAL {
         return sql;
     }
     
-    private static boolean ExisteVenta(Venta pVenta) throws Exception {
-        boolean existe = false;
-        ArrayList<Venta> ventas = new ArrayList();
-        try (Connection conn = ComunDB.ObtenerConexion();) { 
-            String sql = ObtenerSelect(pVenta);  
-            sql += " WHERE v.Id<>? AND v.IdCliente<>? AND v.IdProducto<>? AND v.Contacto<>? AND v.TotalProducto<>? AND v.MontoTotal<>? AND v.IdTransacion<>? AND v.Direccion<>? AND v.Fecha=?";
-            try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);){
-                ps.setInt(1, pVenta.getId()); 
-                ps.setInt(2, pVenta.getIdCliente()); 
-                ps.setInt(3, pVenta.getIdProducto());
-                ps.setString(4, pVenta.getContacto());
-                ps.setDouble(5, pVenta.getTotalProducto());
-                ps.setDouble(6, pVenta.getMontoTotal());
-                ps.setDouble(7, pVenta.getIdTransacion());
-                ps.setString(7, pVenta.getDireccion());
-                ps.setDate(8, java.sql.Date.valueOf(LocalDate.now()));
-                ObtenerDatos(ps, ventas);
-                ps.close(); 
-            } catch (SQLException ex) {
-                throw ex;
-            }
-            conn.close(); 
-        }
-        catch (SQLException ex) {
-            throw ex; 
-        }
-        if (!ventas.isEmpty()) { 
-            Venta venta;
-            venta = ventas.get(0); 
-            if (venta.getId() > 0 && venta.getIdCliente()>0 && venta.getIdProducto()>0 && venta.getContacto().equals(pVenta.getContacto()) && venta.getTotalProducto()>0 && venta.getMontoTotal()>0 && venta.getIdTransacion()>0 && venta.getDireccion().equals(pVenta.getDireccion())){
-                existe = true;
-            }
-        }
-        return existe;
-    }
+   
    
     public static int crear(Venta pVenta) throws Exception {
         int result;

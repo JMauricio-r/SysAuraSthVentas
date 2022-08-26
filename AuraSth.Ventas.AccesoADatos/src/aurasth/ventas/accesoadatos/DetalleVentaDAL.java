@@ -26,37 +26,7 @@ public class DetalleVentaDAL {
         return sql;
     }
     
-    private static boolean ExisteDetalleVenta(DetalleVenta pDetalleVenta) throws Exception {
-        boolean existe = false;
-        ArrayList<DetalleVenta> detalleVentas = new ArrayList();
-        try (Connection conn = ComunDB.ObtenerConexion();) { 
-            String sql = ObtenerSelect(pDetalleVenta);  
-            sql += " WHERE d.Id<>? AND d.idProducto<>? AND d.idVenta<>? d.Cantidad<>? AND d.total=?";
-            try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);){
-                ps.setInt(1, pDetalleVenta.getId()); 
-                ps.setInt(2, pDetalleVenta.getIdProducto()); 
-                ps.setInt(3, pDetalleVenta.getIdVenta());
-                ps.setInt(4, pDetalleVenta.getCantidad());
-                ps.setDouble(5, pDetalleVenta.getTotal());
-                ObtenerDatos(ps, detalleVentas);
-                ps.close(); 
-            } catch (SQLException ex) {
-                throw ex;
-            }
-            conn.close(); 
-        }
-        catch (SQLException ex) {
-            throw ex; 
-        }
-        if (!detalleVentas.isEmpty()) { 
-            DetalleVenta detalleVenta;
-            detalleVenta = detalleVentas.get(0); 
-            if (detalleVenta.getId() > 0 && detalleVenta.getIdProducto()>0 && detalleVenta.getIdVenta() >0 && detalleVenta.getCantidad() >0 && detalleVenta.getTotal() > 0) {
-                existe = true;
-            }
-        }
-        return existe;
-    }
+    
    
     public static int crear(DetalleVenta pDetalleVenta) throws Exception {
         int result;

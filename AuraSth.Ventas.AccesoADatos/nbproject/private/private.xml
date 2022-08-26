@@ -6,8 +6,14 @@
             <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/ComunDB.java</file>
             <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/RolDAL.java</file>
         </group>
+<<<<<<< HEAD
         <group name="ProgramacionJAVA">
             <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/CategoríaDAL.java</file>
+=======
+        <group name="ProgramacionJAVA"/>
+        <group name="SysFromPacific">
+            <file>file:/C:/Users/aleja/Desktop/AuraSmith/SysAuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/CategoríaDAL.java</file>
+>>>>>>> 286c9970427c80fb46e757077a195c3cd9b1edb7
         </group>
     </open-files>
 </project-private>
