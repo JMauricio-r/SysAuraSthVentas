@@ -33,8 +33,6 @@ public class VentaDAL {
     public static int crear(Venta pVenta) throws Exception {
         int result;
         String sql;
-        boolean existe = ExisteVenta(pVenta);
-        if (existe == false) {
             try (Connection conn = ComunDB.ObtenerConexion();) { 
                 sql = "INSERT INTO Ventas(IdCliente,IdProducto, Contacto, TotalProducto, MontoTotal, IdTransacion,Direccion, Fecha) VALUES(?,?,?,?,?,?,?)";
                 try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);) {
@@ -55,18 +53,12 @@ public class VentaDAL {
             catch (SQLException ex) {
                 throw ex; 
             }
-        } else {
-            result = 0;
-            throw new RuntimeException("Venta ya existe");
-        }
         return result; 
     }
 
     public static int Modificar(Venta pVenta) throws Exception {
         int result;
         String sql;
-        boolean existe = ExisteVenta(pVenta);
-        if (existe == false) {
             try (Connection conn = ComunDB.ObtenerConexion();) { 
                 sql = "UPDATE Ventas SET IdCliente, IdProducto, Contacto, TotalProducto, MontoTotal, IdTransacion, Direccion, Fecha? WHERE Id=?";
                 try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn, sql);) { 
@@ -88,10 +80,6 @@ public class VentaDAL {
             catch (SQLException ex) {
                 throw ex; 
             }
-        } else {
-            result = 0;
-            throw new RuntimeException("Venta ya existe"); 
-        }
         return result; 
     }
     

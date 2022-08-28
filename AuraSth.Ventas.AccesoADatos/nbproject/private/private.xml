@@ -6,6 +6,9 @@
             <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/ComunDB.java</file>
             <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/RolDAL.java</file>
         </group>
-        <group name="ProgramacionJAVA"/>
+        <group name="ProgramacionJAVA">
+            <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/VentaDAL.java</file>
+            <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.AccesoADatos/src/aurasth/ventas/accesoadatos/DetalleVentaDAL.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -6,6 +6,7 @@ public class Carrito {
    private int Id;
    private int IdCliente;
    private int IdProducto;
+   private int top_aux;
    private Cliente clientes;
    private Producto productos;
 
@@ -17,9 +18,7 @@ public class Carrito {
         this.IdCliente = IdCliente;
         this.IdProducto = IdProducto;
     }
-     
-    
-    
+
     public int getId() {
         return Id;
     }
@@ -42,6 +41,14 @@ public class Carrito {
 
     public void setIdProducto(int IdProducto) {
         this.IdProducto = IdProducto;
+    }
+
+    public int getTop_aux() {
+        return top_aux;
+    }
+
+    public void setTop_aux(int top_aux) {
+        this.top_aux = top_aux;
     }
 
     public Cliente getClientes() {

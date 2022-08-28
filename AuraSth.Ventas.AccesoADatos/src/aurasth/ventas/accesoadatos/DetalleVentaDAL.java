@@ -26,13 +26,9 @@ public class DetalleVentaDAL {
         return sql;
     }
     
-    
-   
     public static int crear(DetalleVenta pDetalleVenta) throws Exception {
         int result;
         String sql;
-        boolean existe = ExisteDetalleVenta(pDetalleVenta);
-        if (existe == false) {
             try (Connection conn = ComunDB.ObtenerConexion();) { 
                 sql = "INSERT INTO DetalleVentas(IdProducto, IdVenta, Cantidad, Total) VALUES(?,?,?,?)";
                 try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);) {
@@ -50,18 +46,12 @@ public class DetalleVentaDAL {
             catch (SQLException ex) {
                 throw ex; 
             }
-        } else {
-            result = 0;
-            throw new RuntimeException("DetalleVenta ya existe");
-        }
         return result; 
     }
 
     public static int Modificar(DetalleVenta pDetalleVenta) throws Exception {
         int result;
         String sql;
-        boolean existe = ExisteDetalleVenta(pDetalleVenta);
-        if (existe == false) {
             try (Connection conn = ComunDB.ObtenerConexion();) { 
                 sql = "UPDATE DetalleVentas SET IdProducto, IdVenta, Cantidad, Total? WHERE Id=?";
                 try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn, sql);) { 
@@ -79,10 +69,6 @@ public class DetalleVentaDAL {
             catch (SQLException ex) {
                 throw ex; 
             }
-        } else {
-            result = 0;
-            throw new RuntimeException("DetalleVenta ya existe"); 
-        }
         return result; 
     }
     
@@ -93,10 +79,6 @@ public class DetalleVentaDAL {
             sql = "DELETE FROM DetalleVentas WHERE Id=?"; 
             try (PreparedStatement ps = ComunDB.CreatePreparedStatement(conn,sql);) { 
                 ps.setInt(1, pDetalleVenta.getId());
-//                ps.setInt(2, pDetalleVenta.getIdProducto());
-//                ps.setInt(3, pDetalleVenta.getIdVenta());
-//                ps.setInt(4, pDetalleVenta.getCantidad());
-//                ps.setDouble(5, pDetalleVenta.getTotal());
                 result = ps.executeUpdate(); 
                 ps.close(); 
             } catch (SQLException ex) {
