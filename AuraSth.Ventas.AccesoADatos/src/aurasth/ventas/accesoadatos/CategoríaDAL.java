@@ -55,7 +55,7 @@ public class CategoríaDAL {
         return existe;
     }
    
-    public static int crear(Categoria pCategoria) throws Exception {
+    public static int Crear(Categoria pCategoria) throws Exception {
         int result;
         String sql;
         boolean existe = ExisteCategoria(pCategoria);

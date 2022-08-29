@@ -325,7 +325,7 @@ public class ClienteDAL {
         return cliente; 
     }
 
-    public static int CambiarPassword(Usuario pCliente, String pPasswordAnt) throws Exception {
+    public static int CambiarPassword(Cliente pCliente, String pPasswordAnt) throws Exception {
         int result;
         String sql;
         Cliente clienteAnt = new Cliente();

@@ -26,7 +26,7 @@ public class DetalleVentaDAL {
         return sql;
     }
     
-    public static int crear(DetalleVenta pDetalleVenta) throws Exception {
+    public static int Crear(DetalleVenta pDetalleVenta) throws Exception {
         int result;
         String sql;
             try (Connection conn = ComunDB.ObtenerConexion();) { 

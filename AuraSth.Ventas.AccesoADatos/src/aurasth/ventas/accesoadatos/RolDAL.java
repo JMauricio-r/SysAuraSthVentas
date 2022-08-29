@@ -54,7 +54,7 @@ public class RolDAL {
         return existe;
     }
    
-    public static int crear(Rol pRol) throws Exception {
+    public static int Crear(Rol pRol) throws Exception {
         int result;
         String sql;
         boolean existe = ExisteRol(pRol);

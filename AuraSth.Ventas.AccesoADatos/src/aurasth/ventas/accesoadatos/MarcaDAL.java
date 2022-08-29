@@ -55,7 +55,7 @@ public class MarcaDAL {
         return existe;
     }
    
-    public static int crear(Marca pMarca) throws Exception {
+    public static int Crear(Marca pMarca) throws Exception {
         int result;
         String sql;
         boolean existe = ExisteMarca(pMarca);

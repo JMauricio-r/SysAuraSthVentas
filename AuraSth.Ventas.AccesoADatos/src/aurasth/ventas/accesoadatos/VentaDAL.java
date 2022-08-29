@@ -30,7 +30,7 @@ public class VentaDAL {
     
    
    
-    public static int crear(Venta pVenta) throws Exception {
+    public static int Crear(Venta pVenta) throws Exception {
         int result;
         String sql;
             try (Connection conn = ComunDB.ObtenerConexion();) { 
