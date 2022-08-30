@@ -31,6 +31,10 @@ public class UsuarioBL {
         return UsuarioDAL.Buscar(pUsuario);
     }
     
+    public ArrayList<Usuario> BuscarIncluirRol(Usuario pUsuario) throws Exception {
+        return UsuarioDAL.BuscarIncluirRol(pUsuario);
+    }
+    
     public Usuario Login(Usuario pUsuario)throws Exception{
         return UsuarioDAL.Login(pUsuario);
     }

@@ -3,8 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="ProgramacionJAVA">
-            <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.UI.WebApp/src/java/aurasth/ventas/ui/webapp/controllers/Loginservlet.java</file>
-            <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.UI.WebApp/web/index.jsp</file>
+            <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.UI.WebApp/src/java/aurasth/ventas/ui/webapp/controllers/UsuarioServlet.java</file>
+            <file>file:/C:/Users/vinny/OneDrive/Escritorio/AuraSthVentas/AuraSth.Ventas.UI.WebApp/src/java/aurasth/ventas/ui/webapp/utils/Utilidad.java</file>
         </group>
     </open-files>
 </project-private>

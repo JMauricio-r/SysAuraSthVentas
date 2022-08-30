@@ -41,7 +41,7 @@ public class RolServlet extends HttpServlet {
             request.setAttribute("top_aux", rol.getTop_aux());
             request.getRequestDispatcher("Views/Rol/index.jsp").forward(request, response);
         } catch (Exception e) {
-            Utilidad.EnviarError(e.getMessage(), request, response);
+            Utilidad.enviarError(e.getMessage(), request, response);
         }
     }
 
@@ -54,7 +54,7 @@ public class RolServlet extends HttpServlet {
             request.setAttribute("top_aux", rol.getTop_aux());
             request.getRequestDispatcher("Views/Rol/index.jsp").forward(request, response);
         } catch (Exception e) {
-            Utilidad.EnviarError(e.getMessage(), request, response);
+            Utilidad.enviarError(e.getMessage(), request, response);
         }
     }
     
@@ -72,10 +72,10 @@ public class RolServlet extends HttpServlet {
                 request.setAttribute("accion", "index");
                 doGetRequestIndex(request, response);
             } else {
-                Utilidad.EnviarError("No se logro registrar un nuevo registro", request, response);
+                Utilidad.enviarError("No se logro registrar un nuevo registro", request, response);
             }
         } catch (Exception ex) {
-            Utilidad.EnviarError(ex.getMessage(), request, response);
+            Utilidad.enviarError(ex.getMessage(), request, response);
         }
     }
     
@@ -87,11 +87,11 @@ public class RolServlet extends HttpServlet {
             if (rol_result.getId() > 0) {
                 request.setAttribute("rol", rol_result);
             } else {
-                Utilidad.EnviarError("El Id:" + rol.getId()
+                Utilidad.enviarError("El Id:" + rol.getId()
                         + " no existe en la tabla de Rol", request, response);
             }
         } catch (Exception ex) {
-            Utilidad.EnviarError(ex.getMessage(), request, response);
+            Utilidad.enviarError(ex.getMessage(), request, response);
         }
     }
  
@@ -110,10 +110,10 @@ public class RolServlet extends HttpServlet {
                 request.setAttribute("accion", "index");
                 doGetRequestIndex(request, response);
             } else {
-                Utilidad.EnviarError("No se logro actualizar el registro", request, response);
+                Utilidad.enviarError("No se logro actualizar el registro", request, response);
             }
         } catch (Exception ex) {
-            Utilidad.EnviarError(ex.getMessage(), request, response);
+            Utilidad.enviarError(ex.getMessage(), request, response);
         }
     }
 
@@ -138,10 +138,10 @@ public class RolServlet extends HttpServlet {
                 request.setAttribute("accion", "index");
                 doGetRequestIndex(request, response);
             } else {
-                Utilidad.EnviarError("No se logro eliminar el registro", request, response);
+                Utilidad.enviarError("No se logro eliminar el registro", request, response);
             }
         } catch (Exception ex) {
-            Utilidad.EnviarError(ex.getMessage(), request, response);
+            Utilidad.enviarError(ex.getMessage(), request, response);
         }
     }
     

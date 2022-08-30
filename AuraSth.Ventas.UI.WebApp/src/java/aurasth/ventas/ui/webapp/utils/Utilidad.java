@@ -18,7 +18,7 @@ public class Utilidad {
         return result;
     }
 
-    public static void EnviarError(String pError, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public static void enviarError(String pError, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("error", pError);
         request.getRequestDispatcher("Views/Shared/error.jsp").forward(request, response);
     }
